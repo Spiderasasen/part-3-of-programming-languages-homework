@@ -5,6 +5,7 @@ void pointerPractice();
 void seperator(int question_number); //mainly used for me to see if where everything is
 void reverse2(char* string, char* string2);
 int length_word(char* string);
+int firstVowel (char* string);
 
 int main() {
     //question 1, Practice with pointers
@@ -17,6 +18,15 @@ int main() {
     char* reverse = malloc(sizeof(char)*4);
     reverse2(forward, reverse);
     printf("%s\n", reverse);
+
+    //question 3, getting the index of where the first vowel is located, not including y
+    char* trail1 = "abcdef";
+    char* trail2 = "bdefg";
+    char* trail3 = "lkjp";
+    printf("%d\n",firstVowel(trail1)); // prints 0
+    printf("%d\n",firstVowel(trail2)); // prints 2
+    printf("%d\n",firstVowel(trail3)); // prints -1
+
     return 0;
 }
 
@@ -73,4 +83,21 @@ int length_word(char* string) {
         length++;
     }
     return length;
+}
+
+//question 3
+int firstVowel (char* string) {
+    int index = -1;
+
+    //counting until the index is found
+    while (*string) {
+        string++;
+        index++;
+
+        //checking if there is a vowel
+        if (*string == 'a' || *string == 'e' || *string == 'i' || *string == 'o' || *string == 'u') {
+            return index;
+        }
+    }
+    return index;
 }
