@@ -34,7 +34,7 @@ int main() {
 //sepreating the questions
 void seperator(int question_number) {
     //checking if the question number is 6
-    if (question_number == 4) {
+    if (question_number == 5) {
         printf("\n|************* Final Question *************|\n");
     }
     else {
