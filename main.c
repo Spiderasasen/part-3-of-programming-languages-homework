@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 void pointerPractice();
-void seperator(int question_number);
+void seperator(int question_number); //mainly used for me to see if where everything is
 
 int main() {
     //question 1, Practice with pointers
