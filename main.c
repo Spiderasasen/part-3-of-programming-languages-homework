@@ -13,9 +13,8 @@ int main() {
 
     //question 2, Reverse a string with no set length
     seperator(2);
-    char* forward = "Hello World!";
-    int stringLength = length_word(forward);
-    char* reverse = malloc(sizeof(char)*stringLength);
+    char* forward = "Hello World";
+    char* reverse = malloc(sizeof(char)*4);
     reverse2(forward, reverse);
     printf("%s\n", reverse);
     return 0;
@@ -59,7 +58,11 @@ void pointerPractice() {
 
 //question 2
 void reverse2(char* string, char* string2) {
+    int size = length_word(string);
 
+    for (int i = 0; i < size; i++) {
+        string2[i] = string[size - 1 - i];
+    }
 }
 
 //getting the length of the word
