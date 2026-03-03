@@ -2,10 +2,24 @@
 #include <stdlib.h>
 
 void pointerPractice();
+void seperator(int question_number);
 
 int main() {
+    seperator(1);
     pointerPractice();
+    seperator(2);
     return 0;
+}
+
+//sepreating the questions
+void seperator(int question_number) {
+    //checking if the question number is 6
+    if (question_number == 4) {
+        printf("\n|************* Final Question *************|\n");
+    }
+    else {
+        printf("\n|************* Question %d *************|\n", question_number);
+    }
 }
 
 //question 1
@@ -32,3 +46,5 @@ void pointerPractice() {
     printf("Address of x: %p\n", &x);
     printf("Value of x: %d\n", x);
 }
+
+//question 2
