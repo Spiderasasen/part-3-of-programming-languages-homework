@@ -3,6 +3,8 @@
 
 void pointerPractice();
 void seperator(int question_number); //mainly used for me to see if where everything is
+void reverse2(char* string, char* string2);
+int length_word(char* string);
 
 int main() {
     //question 1, Practice with pointers
@@ -11,6 +13,11 @@ int main() {
 
     //question 2, Reverse a string with no set length
     seperator(2);
+    char* forward = "Hello World!";
+    int stringLength = length_word(forward);
+    char* reverse = malloc(sizeof(char)*stringLength);
+    reverse2(forward, reverse);
+    printf("%s\n", reverse);
     return 0;
 }
 
@@ -53,4 +60,14 @@ void pointerPractice() {
 //question 2
 void reverse2(char* string, char* string2) {
 
+}
+
+//getting the length of the word
+int length_word(char* string) {
+    int length = 0;
+    while (*string) {
+        string++;
+        length++;
+    }
+    return length;
 }
