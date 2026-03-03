@@ -5,8 +5,11 @@ void pointerPractice();
 void seperator(int question_number);
 
 int main() {
+    //question 1, Practice with pointers
     seperator(1);
     pointerPractice();
+
+    //question 2, Reverse a string with no set length
     seperator(2);
     return 0;
 }
@@ -48,3 +51,6 @@ void pointerPractice() {
 }
 
 //question 2
+void reverse2(char* string, char* string2) {
+
+}
