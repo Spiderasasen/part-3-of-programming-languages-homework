@@ -20,6 +20,7 @@ int main() {
     printf("%s\n", reverse);
 
     //question 3, getting the index of where the first vowel is located, not including y
+    seperator(3);
     char* trail1 = "abcdef";
     char* trail2 = "bdefg";
     char* trail3 = "lkjp";
@@ -87,17 +88,17 @@ int length_word(char* string) {
 
 //question 3
 int firstVowel (char* string) {
-    int index = -1;
+    int index = 0;
 
     //counting until the index is found
     while (*string) {
-        string++;
-        index++;
-
         //checking if there is a vowel
         if (*string == 'a' || *string == 'e' || *string == 'i' || *string == 'o' || *string == 'u') {
             return index;
         }
+
+        string++;
+        index++;
     }
-    return index;
+    return -1;
 }
