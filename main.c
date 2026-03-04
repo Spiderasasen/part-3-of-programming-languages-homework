@@ -7,6 +7,7 @@ void reverse2(char* string, char* string2);
 int length_word(char* string);
 int firstVowel (char* string);
 char* concat(char* string, char* string2);
+char* pigLatin(char* original);
 
 int main() {
     //question 1, Practice with pointers
@@ -40,6 +41,10 @@ int main() {
     seperator(5);
     char* string = "apple";
     char* string2 = "dapple";
+    char* pig_latin1 = pigLatin(string);
+    char* pig_latin2 = pigLatin(string2);
+    printf("String 1: %s\nPig Latin 1: %s\n", string, pig_latin1);
+    printf("String 2: %s\nPig Latin 2: %s\n", string2, pig_latin2);
 
     return 0;
 }
@@ -145,25 +150,23 @@ char* concat(char* first, char* second) {
 
 //question 5
 char* pigLatin(char* original) {
-    int first_vowel = firstVowel(original);
-    char* changed_word = "";
+    int fv = firstVowel(original);
 
-    //if a vowel was located at the first instase, add an ay at the end of the string
-    if (first_vowel == 0) {
-        changed_word = concat(original, "ay");
-    }
-    //else place the first letter at the end of the string with ay
-    else {
-        char first_letter = original[0];
-        //adding the letter with ay
-        char* ay = "ay";
-        char* ending = "";
-        ending[0] = first_letter;
-        //making the ending word
-        ending = concat(ending, ay);
-        //adding the ending with the rest of the word
-        changed_word = concat(original, ending);
+    // Case 1: starts with vowel
+    if (fv == 0) {
+        return concat(original, "ay");
     }
 
-    return changed_word;
+    // Case 2: starts with consonant
+    char* rest = original + fv;
+
+    // build the ending: first consonant + "ay"
+    char temp[2];
+    temp[0] = original[0];
+    temp[1] = '\0';
+
+    char* ending = concat(temp, "ay");
+
+    // final result: rest + ending
+    return concat(rest, ending);
 }
