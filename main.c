@@ -6,6 +6,7 @@ void seperator(int question_number); //mainly used for me to see if where everyt
 void reverse2(char* string, char* string2);
 int length_word(char* string);
 int firstVowel (char* string);
+char* concat(char* string, char* string2);
 
 int main() {
     //question 1, Practice with pointers
@@ -28,6 +29,12 @@ int main() {
     printf("%d\n",firstVowel(trail2)); // prints 2
     printf("%d\n",firstVowel(trail3)); // prints -1
 
+    //question 4
+    seperator(4);
+    char* first = "abc";
+    char* second = "defg";
+    char* new_string = concat(first, second);
+    printf("%s\n",new_string);
     return 0;
 }
 
@@ -101,4 +108,32 @@ int firstVowel (char* string) {
         index++;
     }
     return -1;
+}
+
+//question 4
+char* concat(char* first, char* second) {
+    int size1 = length_word(first);
+    int size2 = length_word(second);
+    int total_size = size1 + size2;
+
+    //making enough memory for the final string
+    char* new_string = malloc(total_size + 1);
+
+    //copying the first string
+    int i = 0;
+    while (*first) {
+        new_string[i] = *first;
+        first++;
+        i++;
+    }
+
+    //copying the second string
+    while (*second) {
+        new_string[i] = *second;
+        second++;
+        i++;
+    }
+
+    return new_string;
+
 }
