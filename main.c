@@ -142,3 +142,28 @@ char* concat(char* first, char* second) {
 
     return new_string;
 }
+
+//question 5
+char* pigLatin(char* original) {
+    int first_vowel = firstVowel(original);
+    char* changed_word = "";
+
+    //if a vowel was located at the first instase, add an ay at the end of the string
+    if (first_vowel == 0) {
+        changed_word = concat(original, "ay");
+    }
+    //else place the first letter at the end of the string with ay
+    else {
+        char first_letter = original[0];
+        //adding the letter with ay
+        char* ay = "ay";
+        char* ending = "";
+        ending[0] = first_letter;
+        //making the ending word
+        ending = concat(ending, ay);
+        //adding the ending with the rest of the word
+        changed_word = concat(original, ending);
+    }
+
+    return changed_word;
+}
