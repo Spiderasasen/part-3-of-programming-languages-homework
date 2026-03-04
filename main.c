@@ -35,6 +35,12 @@ int main() {
     char* second = "defg";
     char* new_string = concat(first, second);
     printf("%s\n",new_string);
+
+    //question 5
+    seperator(5);
+    char* string = "apple";
+    char* string2 = "dapple";
+
     return 0;
 }
 
@@ -135,5 +141,4 @@ char* concat(char* first, char* second) {
     }
 
     return new_string;
-
 }
